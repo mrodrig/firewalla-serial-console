@@ -58,11 +58,7 @@ Q: What cable are you using with your Firewalla Gold?
 A: I wrote and verified this script using a [Cable Matters USB to RJ45 Console
 Cable with FTDI 6 Feet](https://www.amazon.com/gp/product/B078PVJ5ZQ). While
 this cable is rated for up to 250Kbps, I was only able to get it to work
-reliably with my Firewalla Gold on a Mac at 9600bps. I'll have to check what's
-going on, but I have been able to intermittently get it working with a slightly
-higher baud rate.
-
-Q: Why is your baud rate lower than what Firewalla lists?
-
-A: It could be the cable, or something about my Firewalla Gold. I'm not 100%
-sure and need to investigate more.
+reliably with my Firewalla Gold on a Mac at 151200bps once I passed `-ixoff` to
+disable flow control. Firewalla doesn't mention having to pass that flag in
+their documentation, but it's what I found first-hand and was the only way I
+could reliably connect at a rate higher than 9600bps.
